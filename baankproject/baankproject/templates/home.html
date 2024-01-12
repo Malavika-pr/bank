@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <title>Home Page</title>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+
+        <li><a href="{% url 'baankapp:login' %}">Login</a></li>
+        <li><a href="{% url 'baankapp:register' %}">Register</a></li>
+        <li class="dropdown">
+          <a href="">Branches</a>
+          <ul class="dropdown-content">
+              <a href="https://en.wikipedia.org/wiki/Alappuzha_district">Alapuzha</a><br>
+              <a href="https://en.wikipedia.org/wiki/Ernakulam_district">Ernakulam</a><br>
+              <a href="https://en.wikipedia.org/wiki/Kollam_district">Kollam</a><br>
+              <a href="https://en.wikipedia.org/wiki/Kozhikode_district">Kozhicode</a><br>
+              <a href="https://en.wikipedia.org/wiki/Thiruvananthapuram_district">Thiruvananthapuram</a><br>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <button onclick="showLoginForm()">Click Here</button>
+  </main>
+
+  <script>
+    function showLoginForm() {
+      window.location.href = "{% url 'baankapp:login' %}";
+    }
+  </script>
+
+</body>
+</html>
